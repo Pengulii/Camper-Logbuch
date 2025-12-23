@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camper Logbuch</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: darkgray;
+    color: #ecf0f1;
+    overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav h1 {
+    color: #ffd700;
+    font-size: 22px;
+}
+
+.menu-toggle {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    min-height: 100vh;
+    padding: 100px 20px 40px;
+    margin-top: 60px;
+    background: rgba(44,62,80,0.9);
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+ul {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(52,73,94,0.9);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+/* ===== CLICK BOXES ===== */
+ul li a {
+    display: block;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    text-decoration: none;
+    color: aqua;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ===== MAP ===== */
+#karte img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    ul li a {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Camper Logbuch</h1>
+    <div class="menu-toggle" id="burger">☰</div>
+    <ul id="menu">
+        <li><a href="#laender">Länder</a></li>
+        <li><a href="#staedte">Städte</a></li>
+        <li><a href="#sehens">Sehenswürdigkeiten</a></li>
+        <li><a href="#karte">Karte</a></li>
+    </ul>
+</nav>
+
+<section id="laender">
+    <h2>Bereiste Länder</h2>
+    <ul>
+        <li>Deutschland</li>
+        <li>Frankreich</li>
+        <li>Belgien</li>
+    </ul>
+</section>
+
+<section id="staedte">
+    <h2>Bereiste Städte</h2>
+    <ul>
+        <li><a href="Städte/Deutschland/Lahnstein.html">Lahnstein</a></li>
+        <li><a href="Städte/Frankreich/Straßbourg.html">Straßbourg</a></li>
+        <li><a href="Städte/Frankreich/Colmar.html">Colmar</a></li>
+        <li><a href="Städte/Belgien/Antwerpen.html">Antwerpen</a></li>
+    </ul>
+</section>
+
+<section id="sehens">
+    <h2>Sehenswürdigkeiten</h2>
+    <ul>
+        <li><a href="Sehenswürdigkeiten/Kloster Odilé.html">Kloster Odilé</a></li>
+        <li><a href="Sehenswürdigkeiten/Schloss Hohkönigsburg.html">Schloss Hohkönigsburg</a></li>
+        <li><a href="Sehenswürdigkeiten/Lac Blanc.html">Lac Blanc</a></li>
+    </ul>
+</section>
+
+<section id="karte">
+    <h2>Europakarte</h2>
+    <img src="Bilder/Europakarte.png" alt="Europakarte">
+</section>
+
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const sections = document.querySelectorAll("section");
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+/* Animation beim Laden & Scroll */
+function showSections() {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            section.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", showSections);
+window.addEventListener("load", showSections);
+</script>
+
+</body>
+</html>

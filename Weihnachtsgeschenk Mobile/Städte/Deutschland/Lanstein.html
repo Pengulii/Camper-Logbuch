@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="author" content="KB"/>
+
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: darkgray;
+      color: #ecf0f1;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffd700;
+      margin-bottom: 40px;
+    }
+
+    /* ✅ GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .grid img:hover {
+      transform: scale(1.03);
+      border: 4px solid aquamarine;
+    }
+
+    /* ✅ großes Bild über 2 Reihen */
+    .big {
+      grid-row: span 2;
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .big {
+        grid-row: span 1;
+      }
+    }
+    p {
+    font-size: 22px;
+    max-width: 800px;
+    line-height: 1.8;
+    margin: 20px auto;
+    background-color: rgba(52, 73, 94, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  p:hover {
+    transform: scale(1.05);
+    background-color: rgba(52, 73, 94, 1);
+  }
+  a {
+  color: aqua;
+  text-decoration: none;
+}
+a:hover {
+  color: beige;
+}
+  </style>
+</head>
+
+<body>
+
+  <h1>Lahnstein</h1>
+
+  <div class="grid">
+    <img src="../../Bilder/Lahnstein bild 1.jpg" alt="">
+    <img src="../../Bilder/Lahnstein 2.jpg" alt="">
+    <img src="../../Bilder/Lahnstein 3.jpg" alt="">
+    <img src="../../Bilder/Lahnstein 4.jpg" alt="">
+  </div>
+  <h1>12-14. September 2025</h1>
+  <p>Unsere erste Reise zum testen des Campers. Zu dritt wurde es zwar sehr kuschelig, vorallem als es am Abend 
+    geregnet hat aber es war trotzdem sehr schön</p>
+<h1><a href="../../Weihnachtsgeschenk.html">Zurück</a></h1>
+</body>
+</html>

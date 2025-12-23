@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Straßbourg</title>
+
+<style>
+/* ===================== RESET ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: darkgray;
+  color: #ecf0f1;
+  min-height: 100vh;
+  overflow-x: hidden;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* ===================== ANIMATION ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================== NAVIGATION ===================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  padding: 10px 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* ===================== HEADINGS ===================== */
+h1 {
+  text-align: center;
+  color: #ffd700;
+  margin: 90px 0 25px;
+}
+
+p {
+  font-size: 18px;
+  max-width: 900px;
+  line-height: 1.8;
+  margin: 20px auto 50px;
+  background-color: rgba(52, 73, 94, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ===================== RESPONSIVE GRID ===================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  grid-auto-flow: dense;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover nur auf Desktop */
+@media (hover: hover) {
+  .grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px aquamarine;
+  }
+}
+
+/* großes Bild */
+.grid .big {
+  grid-row: span 2;
+}
+
+/* ===================== LINKS ===================== */
+a {
+  color: aqua;
+  text-decoration: none;
+}
+
+a:hover {
+  color: beige;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 26px;
+    margin-top: 80px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 15px 15px 40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../../Weihnachtsgeschenk.html">← Zurück</a>
+  <span>Straßbourg</span>
+</nav>
+
+<h1>Straßbourg</h1>
+
+<div class="grid">
+  <img src="../../Bilder/Straßbourg 1.jpeg" alt="Straßbourg 1">
+  <img src="../../Bilder/Straßbourg 6.jpg" alt="Straßbourg 2">
+  <img src="../../Bilder/Straßbourg 3.jpeg" alt="Straßbourg 3">
+  <img src="../../Bilder/Straßbourg 2.jpeg" alt="Straßbourg 4" class="big">
+  <img src="../../Bilder/Straßbourg 5.jpg" alt="Straßbourg 5">
+  <img src="../../Bilder/Straßbourg 4.jpeg" alt="Straßbourg 6">
+  <img src="../../Bilder/Straßbourg 7.jpg" alt="Straßbourg 7">
+</div>
+
+<h1>11.–13. Oktober 2025</h1>
+<p>
+Der Anfang unserer Reise zu dritt durch das wunderschöne Elsass.
+Die erste Nacht auf dem Stellplatz neben dem von einem Kind markierten Auto (zerkratzt).
+Wir waren in der Stadt und haben zum ersten mal richtiges französisches Baguette probiert.
+Nicht zu vergessen natürlich der leckere Inder am Abend.
+</p>
+
+<h1>13.–14. Dezember 2025</h1>
+<p>
+Ein zweites Mal in Straßbourg, dieses Mal allerdings nur zu zweit auf dem wunderschönen Weihnachtsmarkt.
+Übernachtet habt ihr an der französischen Grenze, seid aber extra für Straßbourg hingefahren.
+Auf dem stark bewachten Weihnachtsmarkt gab es Glühwein und viele andere tolle Sachen.
+</p>
+
+<div class="grid">
+  <img src="../../Bilder/Straßbourg 2.1.jpeg" alt="Weihnachtsmarkt 1">
+  <img src="../../Bilder/Straßbourg 2.2.jpeg" alt="Weihnachtsmarkt 2">
+  <img src="../../Bilder/Straßbourg 2.3.jpeg" alt="Weihnachtsmarkt 3">
+  <img src="../../Bilder/Straßbourg 2.4.jpeg" alt="Weihnachtsmarkt 4">
+</div>
+
+</body>
+</html>
